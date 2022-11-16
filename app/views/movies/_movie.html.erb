@@ -1,0 +1,22 @@
+<div id="<%= dom_id movie %>">
+  <p>
+    <strong>Title:</strong>
+    <%= movie.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= movie.description %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= movie.category %>
+  </p>
+
+  <p>
+    <strong>Poster:</strong>
+    <%= link_to movie.poster.filename, movie.poster if movie.poster.attached? %>
+  </p>
+
+</div>
