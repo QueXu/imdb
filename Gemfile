@@ -72,3 +72,6 @@ group :test do
 end
 
 gem "aws-sdk-s3", require: false
+
+gem "devise"
+
