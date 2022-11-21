@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html>
+
+<header>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/alerts' %>
+</header>
+
+<html style="background-color: #E8E8E8">
   <head>
     <title>Imdb</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,13 +15,58 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  
-  <header>
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/alerts' %>
-  </header>
 
   <body>
     <%= yield %>
   </body>
 </html>
+
+
+
+<style>
+  .flex-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: normal;
+  align-items: center;
+  align-content: normal;
+}
+
+.flex-items:nth-child(1) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.flex-items:nth-child(2) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.flex-items:nth-child(3) {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+  .flex-container > div {
+    margin: 10px;
+  }
+
+  .column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

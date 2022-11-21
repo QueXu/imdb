@@ -22,8 +22,7 @@
   </div>
 
   <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= form.text_field :category %>
+    <%= form.select :category, Movie::CATEGORIES, style: "display: block" %>
   </div>
 
   <div>

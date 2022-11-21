@@ -76,3 +76,10 @@ gem "aws-sdk-s3", require: false
 gem "devise"
 
 gem "cssbundling-rails", "~> 1.1"
+
+gem "pry"
+
+gem 'will_paginate', '~> 3.3'
+gem 'will_paginate-bulma'
+
+gem "ransack", "~> 3.2"

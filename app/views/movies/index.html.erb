@@ -1,14 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Movies</h1>
-
-<div id="movies">
+<div id="movies" style= "margin:10%; margin-top:2%; margin-bottom:2%" class="flex-container">
   <% @movies.each do |movie| %>
+  <div class="flex-items">
     <%= render movie %>
     <p>
-      <%= link_to "Show this movie", movie %>
+      <%= link_to "Details", movie %>
     </p>
+  </div>
   <% end %>
 </div>
 
-<%= link_to "New movie", new_movie_path %>
+<div style="margin-left:25%; margin-right:25%">
+<%= will_paginate @movies, renderer: BulmaPagination::Rails, class: "is-centered" %>
+</div>
