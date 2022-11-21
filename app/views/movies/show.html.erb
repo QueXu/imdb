@@ -9,8 +9,12 @@
 </p>
 
 <div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
+  <%= link_to "Edit this movie", edit_movie_path(@movie) %>
 
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+<% if current_user %>
+  <% if current_user.email == "admin@admin.com" %>
+    <%= link_to "Back to movies", movies_path %>
+    <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <% end %> 
+<% end %>  
 </div>

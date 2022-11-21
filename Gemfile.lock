@@ -66,6 +66,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    acts-as-taggable-on (9.0.1)
+      activerecord (>= 6.0, < 7.1)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     aws-eventstream (1.2.0)
@@ -193,10 +195,6 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    ransack (3.2.1)
-      activerecord (>= 6.1.5)
-      activesupport (>= 6.1.5)
-      i18n
     regexp_parser (2.6.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -265,6 +263,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  acts-as-taggable-on
   aws-sdk-s3
   bcrypt (~> 3.1.7)
   bootsnap
@@ -278,7 +277,6 @@ DEPENDENCIES
   pry
   puma (~> 5.0)
   rails (~> 7.0.4)
-  ransack (~> 3.2)
   sassc-rails
   selenium-webdriver
   sprockets-rails

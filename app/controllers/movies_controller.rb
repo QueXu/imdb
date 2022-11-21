@@ -3,7 +3,12 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.paginate(:page => params[:page], per_page: 4)
+    if params[:search]
+      @filter = params[:search][:category]
+      @movies = Movie.all.where(category: @filter).paginate(:page => params[:page], per_page: 4)
+    else
+      @movies = Movie.all
+    end
   end
 
   # GET /movies/1 or /movies/1.json
@@ -21,7 +26,7 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
-    @movie = Movie.new(movie_params)
+    @movies = Movie.new(movie_params)
 
     respond_to do |format|
       if @movie.save

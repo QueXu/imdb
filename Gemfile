@@ -82,4 +82,4 @@ gem "pry"
 gem 'will_paginate', '~> 3.3'
 gem 'will_paginate-bulma'
 
-gem "ransack", "~> 3.2"
+gem 'acts-as-taggable-on'
