@@ -79,7 +79,8 @@ gem "cssbundling-rails", "~> 1.1"
 
 gem "pry"
 
-gem 'will_paginate', '~> 3.3'
+gem 'will_paginate'
 gem 'will_paginate-bulma'
 
 gem 'acts-as-taggable-on'
+

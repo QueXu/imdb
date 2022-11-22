@@ -2,12 +2,12 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
 
   # GET /movies or /movies.json
-  def index
+  def index 
     if params[:search]
       @filter = params[:search][:category]
-      @movies = Movie.all.where(category: @filter).paginate(:page => params[:page], per_page: 4)
+      @movies = Movie.where(:category => @filter).paginate(:page => params[:page], :per_page => 4)
     else
-      @movies = Movie.all
+      @movies = Movie.all.paginate(:page => params[:page], :per_page => 4)
     end
   end
 
@@ -26,7 +26,7 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
-    @movies = Movie.new(movie_params)
+    @movie = Movie.new(movie_params)
 
     respond_to do |format|
       if @movie.save
