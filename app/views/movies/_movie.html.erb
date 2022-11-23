@@ -5,9 +5,17 @@
     </div>
 
     <div class="flex-items">
-    <strong>
-      <%= movie.title %>
-    </strong>
+      <strong>
+        <%= movie.title %>
+      </strong>
+    </div>
+    <div class="is-flex">
+      <% if action_name == "index"%>
+        <%= render "movies/ratings/star_rating", movie: movie %>
+      <% end %>
+      <% if action_name == "show"%>
+        <%= render "movies/ratings/average_rating"  %>
+      <% end %>
     </div>
   </div>
 </div>

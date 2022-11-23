@@ -1,0 +1,15 @@
+<% user_movie_rating = user_rating(movie) %>
+<% Rating::MAX_RATE.times do |n| %>
+    <%= button_to movie_path(movie),
+        method: :patch,
+        params: { movie: { rating: n + 1 } },
+        class: "button is-text is-small",
+        style: "padding: 1px" do %>
+        <%= inline_svg_tag(
+        star_rating_class(n, user_movie_rating),
+        class: "
+            w-8 h-8
+            hover:fill-yellow-500 hover:stroke-yellow-500 icon-text",
+        size: '15') %>
+    <% end %>
+<% end %>
