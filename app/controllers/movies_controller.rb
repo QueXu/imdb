@@ -15,8 +15,11 @@ class MoviesController < ApplicationController
 
   # GET /movies/1 or /movies/1.json
   def show
-    @user_rating = current_user.ratings.find_by(movie: @movie).rate
-    @average_rating = @movie.ratings.average(:rate)
+    if current_user
+      @user_rating = current_user.ratings.find_by(movie: @movie).rate
+    end  
+    @average_rating = @movie.average_rating
+    
   end
 
   # GET /movies/new
@@ -45,6 +48,7 @@ class MoviesController < ApplicationController
   # PATCH/PUT /movies/1 or /movies/1.json
   def update
     @movie = Movie.find(params[:id])
+    @movie.update(movie_params)
     @movie.ratings.find_or_create_by(user: current_user).update(rate: params[:movie][:rating])
 
     redirect_to movies_url

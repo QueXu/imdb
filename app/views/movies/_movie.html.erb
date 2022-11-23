@@ -11,7 +11,9 @@
     </div>
     <div class="is-flex">
       <% if action_name == "index"%>
-        <%= render "movies/ratings/star_rating", movie: movie %>
+        <% if current_user %>
+          <%= render "movies/ratings/star_rating", movie: movie %>
+        <% end %>
       <% end %>
       <% if action_name == "show"%>
         <%= render "movies/ratings/average_rating"  %>

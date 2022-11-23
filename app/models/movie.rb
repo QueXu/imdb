@@ -5,11 +5,13 @@ class Movie < ApplicationRecord
 
   acts_as_taggable_on :categories
 
-  has_many :rates
-
   CATEGORIES = %w[
     Action Drama Adventure Romance Western Crime History Biography Comedy
   ].freeze
 
   has_many :ratings, foreign_key: :movie_id, inverse_of: :movie, dependent: :destroy
+
+  def average_rating
+    ratings.average(:rate)
+  end
 end

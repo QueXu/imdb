@@ -1,17 +1,9 @@
-<%= form_for :search, url: root_path, method: "GET" do |f| %>
-  <%= f.select :category, Movie::CATEGORIES, style: "display: block" %>
-  <%= f.submit "Search", class: "button is-primary" %>
-  <%= link_to "Reset", root_path  %>
-<% end %>
-
-
-
 <div id="movies" style= "margin:10%; margin-top:2%; margin-bottom:2%" class="flex-container">
   <% @movies.each do |movie| %>
   <div class="flex-items">
     <%= render movie %>
     <p>
-      <%= link_to "Details", movie %>
+      <%= link_to "Details", movie, class:"button is-info" %>
     </p>
   </div>
   <% end %>
