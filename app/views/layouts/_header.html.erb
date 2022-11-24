@@ -21,14 +21,6 @@
     </div>
 
     <div class="navbar-end">
-      <div class="navbar-item">
-        <%= form_for :search, url: root_path, method: "GET" do |f| %>
-          <h4>Filter by</h4>
-          <%= f.select :category, Movie::CATEGORIES, style: "display: block" %>
-          <%= f.submit "Search", class: "button is-primary" %>
-          <%= link_to "Reset", root_path, class:"button is-danger"  %>
-        <% end %>
-      </div>
       <% if current_user %>
         <div class="navbar-item">
           <%= button_to "Log out", destroy_user_session_path, method: :delete, class:"button is-white" %>

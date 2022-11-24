@@ -2,6 +2,7 @@
 
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[show edit update destroy]
+  before_action :user_admin?, only: [:new, :create, :edit, :destory]
 
   # GET /movies or /movies.json
   def index
@@ -75,4 +76,10 @@ class MoviesController < ApplicationController
   def movie_params
     params.require(:movie).permit(:title, :description, :category, :poster)
   end
+
+  def user_admin?
+    redirect_to root_path unless current_user.email == "admin@admin.com"
+  end
 end
+
+  
